@@ -40,10 +40,11 @@ local DATE = {
   right_justify = true,
   display = function(entry)
     local mtime = entry.stat.mtime.sec
-    if YEAR ~= os.date("%Y", mtime) then
-      return os.date("%b %d  %Y", mtime)
-    end
-    return os.date("%b %d %H:%M", mtime)
+    return os.date("%Y-%m-%d", mtime)
+    -- if YEAR ~= os.date("%Y", mtime) then
+    --   return os.date("%b %d  %Y", mtime)
+    -- end
+    -- return os.date("%b %d %H:%M", mtime)
   end,
   hl = "TelescopePreviewDate",
 }
